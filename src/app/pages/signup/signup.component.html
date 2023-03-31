@@ -1,0 +1,53 @@
+<div class="mar"  fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="80">
+        <h1 >Signup Form</h1>
+        <form [formGroup]="signupForm" (submit)=onSubmit($event)>
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>FirstName</mat-label>
+                <input type="text" matInput formControlName="firstname" placeholder="Enter firstname here">
+                <mat-error *ngIf="signupForm.get('firstname')?.errors?.['required']">
+                   required
+                </mat-error>
+                <mat-error *ngIf="signupForm.get('firstname')?.errors?.['minlength']">
+                    mini 3 characters are required
+                </mat-error>
+                <mat-error *ngIf="signupForm.get('firstname')?.errors?.['maxlength']">
+                    max 7 characters are allowed
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>lastName:</mat-label>
+                <input type="text" matInput formControlName="lastname" placeholder="Enter lastname here">
+                <mat-error>
+                    Lastname is required
+                </mat-error>
+                <mat-error *ngIf="signupForm.get('lastname')?.errors?.['minlength']">
+                    minimum 3 characters is required
+                </mat-error>
+                <mat-error *ngIf="signupForm.get('lastname')?.errors?.['maxlength']">
+                    maximum 7 characters is allowed
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Email:</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Enter email here">
+                <mat-error *ngIf="signupForm.get('email')?.errors?.['required']">
+                    email is required
+                </mat-error>
+                <mat-error *ngIf="signupForm.get('email')?.errors?.['minlength']">
+                    minimum 10 characters is required
+                </mat-error>
+                <mat-error *ngIf="signupForm.get('email')?.errors?.['maxlength']">
+                    maximum 15 characters is allowed
+                </mat-error>
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="end center" fxFlexFill>
+                <button mat-raised-button color="primary">Submit</button>
+
+            </div>
+
+        </form>
+    </div>
+</div>

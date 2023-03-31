@@ -1,0 +1,84 @@
+{
+  "todos": [
+    {
+      "title": "vuejs",
+      "completed": "Incompleted",
+      "target": "2023-03-10",
+      "updatedAt": "4:21:10 PM",
+      "createdAt": "4:21:10 PM",
+      "id": 5
+    },
+    {
+      "title": "mongod",
+      "target": "2023-03-10",
+      "completed": "Completed",
+      "updatedAt": "3/20/2023",
+      "createdAt": "3/20/2023",
+      "id": 7
+    },
+    {
+      "title": "Learning React",
+      "completed": "Incompleted",
+      "target": "2023-03-09",
+      "updatedAt": "3/20/2023",
+      "createdAt": "3/20/2023",
+      "id": 8
+    },
+    {
+      "title": "Learn CSS",
+      "completed": "Incompleted",
+      "target": "2023-03-25",
+      "updatedAt": "3/20/2023",
+      "createdAt": "3/20/2023",
+      "id": 10
+    },
+    {
+      "title": "Learn Dev",
+      "completed": "Incompleted",
+      "target": "2023-03-18",
+      "updatedAt": "3/20/2023",
+      "createdAt": "3/20/2023",
+      "id": 12
+    },
+    {
+      "title": "Learn DataScience",
+      "completed": "Incompleted",
+      "target": "2023-03-18",
+      "updatedAt": "3/20/2023",
+      "createdAt": "3/20/2023",
+      "id": 13
+    },
+    {
+      "title": "Learn Soft",
+      "completed": "Completed",
+      "target": "2023-03-18",
+      "updatedAt": "3/14/2023",
+      "createdAt": "3/14/2023",
+      "id": 15
+    },
+    {
+      "title": "Learn ETl",
+      "target": "2023-03-21",
+      "completed": "Incompleted",
+      "updatedAt": "20-03-2023",
+      "createdAt": "20-03-2023",
+      "id": 16
+    },
+    {
+      "title": "Learn Styles",
+      "completed": "Incompleted",
+      "target": "2023-03-22",
+      "updatedAt": "3/20/2023",
+      "createdAt": "3/20/2023",
+      "id": 17
+    },
+    {
+      "title": "Learn Coding",
+      "target": "2023-03-28",
+      "completed": "Completed",
+      "updatedAt": "27-03-2023",
+      "createdAt": "27-03-2023",
+      "id": 18
+    }
+  ]
+}

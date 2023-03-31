@@ -1,0 +1,73 @@
+<div style="margin: 25px;">
+  <div fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="20">
+    <button mat-raised-button color="primary" (click)="download($event)">Download</button>
+    <button mat-raised-button color="primary" (click)="exportexcel($event)">Export to Excel</button>
+  </div>
+  
+    <div>
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event)" placeholder="search here" #input>
+        </mat-form-field>
+    </div>
+    <div class="mat-elevation-z8">
+        
+    <table  id="table" mat-table [dataSource]="Todos" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
+        <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="target">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> target </th>
+        <td mat-cell *matCellDef="let row"> {{row.target}} </td>
+      </ng-container> 
+
+      <ng-container matColumnDef="completed">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> completed </th>
+        <td mat-cell *matCellDef="let row" > {{row.completed}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="updatedAt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> updatedAt </th>
+        <td mat-cell *matCellDef="let row"> {{row.updatedAt}} </td>
+      </ng-container> 
+
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> createdAt </th>
+        <td mat-cell *matCellDef="let row"> {{row.createdAt}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="edit(row.id)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="delete(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <!-- <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr> -->
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" 
+    showFirstLastButtons aria-label="Select page of users"></mat-paginator>
+  </div>
+  
+</div>

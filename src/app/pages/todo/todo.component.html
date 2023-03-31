@@ -1,0 +1,45 @@
+<div class="margin-top" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="80" >
+        <h1 >Todo Form</h1>
+        <form [formGroup]="todoForm" (submit)=onSubmit($event)>
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Title</mat-label>
+                <input type="text" matInput formControlName="title" placeholder="Enter title">
+                <mat-error *ngIf="todoForm.get('title')?.errors?.['required']">
+                    *title is required
+                </mat-error>
+                <mat-error *ngIf="todoForm.get('title')?.errors?.['minlength']">
+                    mini 3 characters are required
+                </mat-error>
+                <mat-error *ngIf="todoForm.get('title')?.errors?.['maxlength']">
+                    max 30 characters are allowed
+                </mat-error>
+            </mat-form-field>
+            
+           
+            <mat-radio-group aria-labelledby="example-radio-group-label" aria-label="Select an option" formControlName="completed" >
+                
+                <mat-radio-button value="Completed">Completed</mat-radio-button>
+                <mat-radio-button value="Incompleted">Incompleted</mat-radio-button>
+            </mat-radio-group>
+
+            
+            <mat-form-field   class="example-full-width"  appearance="fill" fxFlexFill >
+                <mat-label>Choose a date</mat-label>
+                <input formControlName="target"   matInput [matDatepicker]="picker">
+                <mat-error *ngIf="todoForm.get('target')?.errors?.['required']">
+                   *date is required
+                </mat-error>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker  #picker></mat-datepicker>
+            </mat-form-field>
+            
+
+            <div fxLayout="row" fxLayoutAlign="end center" fxFlexFill>
+                <button mat-raised-button color="primary">Submit</button>
+
+            </div>
+        </form>
+    </div>
+</div>

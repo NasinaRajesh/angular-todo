@@ -1,0 +1,26 @@
+
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+           <mat-icon>menu</mat-icon>
+         </button>
+         <span>My Todo</span>
+    </div>
+   
+   
+    <div>
+        <button mat-button routerLink="" routerLinkActive="active" [routerLinkActiveOptions] = "{exact : true}" >
+             
+            <div matBadge="{{ responseCount }}" matBadgeColor="warn" matBadgeOverlap="false" class="demo-section">Home</div>
+             <!-- <mat-icon matBadge="{{ responseCount }}" matBadgeColor="warn">home</mat-icon>  -->
+        </button>
+        <button mat-button routerLink="todo" routerLinkActive="active" [routerLinkActiveOptions] = "{exact : true}">Todo</button>
+        <button mat-button routerLink="login" routerLinkActive="active" [routerLinkActiveOptions] = "{exact : true}">Login</button>
+        <button mat-button routerLink="signup" routerLinkActive="active" [routerLinkActiveOptions] = "{exact : true}">Signup</button>
+        <button mat-button routerLink="task" routerLinkActive="active" [routerLinkActiveOptions] = "{exact : true}">Task</button>
+        <button mat-button routerLink="two" routerLinkActive="active" [routerLinkActiveOptions] = "{exact : true}">Twoway binding</button>
+    </div>
+
+        
+ </mat-toolbar>
+ 

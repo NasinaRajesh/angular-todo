@@ -1,0 +1,53 @@
+<div class="mar"  fxLayout="row" fxLayoutAlign="center center">
+    <div style="margin-top: 25px;" fxFlex="80">
+        <h1 >Login Form</h1>
+        <form [formGroup]="loginForm" (submit)=onSubmit($event)>
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Username</mat-label>
+                <input type="text" matInput formControlName="username" placeholder="Enter username here">
+                <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">
+                   required
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('username')?.errors?.['minlength']">
+                    mini 3 characters are required
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('username')?.errors?.['maxlength']">
+                    max 7 characters are allowed
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Email</mat-label>
+                <input type="text" matInput formControlName="email" placeholder="Enter email here">
+                <mat-error>
+                   email is required
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('email')?.errors?.['minlength']">
+                    minimum 3 characters is required
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('email')?.errors?.['maxlength']">
+                    maximum 7 characters is allowed
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" placeholder="Enter password here">
+                <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">
+                    password is required
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                    minimum 8 characters is required
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('password')?.errors?.['maxlength']">
+                    maximum 15 characters is allowed
+                </mat-error>
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="end center" fxFlexFill>
+                <button mat-raised-button color="primary">Submit</button>
+
+            </div>
+
+        </form>
+    </div>
+</div>

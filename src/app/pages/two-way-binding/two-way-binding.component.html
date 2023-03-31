@@ -1,0 +1,81 @@
+
+<div style="margin-top: 35px;" fxFlexLayout="row" fxLayoutAlign="center center">
+    <div class="left" >
+        <div class="example-container">
+          
+            <mat-form-field appearance="fill">
+                <mat-label>title</mat-label>
+                <input [(ngModel)]="title" matInput placeholder="enter title">
+
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <mat-label>tagline</mat-label>
+                <input [(ngModel)]="tagline" matInput placeholder="Enter tagline">
+
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Emp Name</mat-label>
+                <input [(ngModel)]="name" matInput placeholder="Enter Emp  name">
+
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Emp Id</mat-label>
+                <input [(ngModel)]="number" matInput placeholder="enter Emp Id">
+
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <mat-label>wedsite</mat-label>
+                <input [(ngModel)]="website" matInput placeholder="enter your phone ">
+
+            </mat-form-field>
+        </div>
+    </div>
+
+
+    <div id="idCard" class="right">
+        <div class="main-section" fxLayout="row" fxLayoutAlign="center center" >
+            <div class="main-card">
+                <div class="company">
+                    <div>
+                        <img src="https://lh6.googleusercontent.com/-QXNYoUwDPOQ/AAAAAAAAAAI/AAAAAAAAAAA/pdHaMz1jKWE/s55-p-k-no-ns-nd/photo.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h1>{{title}}</h1>
+                    </div>
+                    <div class="tagline">
+                        <h4>{{tagline}}</h4>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div >
+                        <img  class="profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+                    </div>
+                </div>
+                <div class="name" fxLayout="row" fxLayoutAlign="center center">
+                    <h2>{{name}}</h2>
+                </div>
+                <div class="id" fxLayout="column" fxLayoutAlign="center center">
+                    <p>Employee ID:MLI <span>{{number}}</span></p>
+                <div class="website">
+                    <p>www.<span>{{website}}</span>.com</p>
+                </div>
+                </div>
+            
+            </div>
+        </div>
+
+
+        
+        <div class="button " fxLayout="row" fxLayoutAlign="center ">
+            <button   mat-raised-button color="primary" (click)="download()">Download</button>
+        </div>
+    </div>
+</div>
